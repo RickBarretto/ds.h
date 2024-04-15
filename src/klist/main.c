@@ -7,7 +7,7 @@
 
 
 #define clear_buffer                                                    \
-        do {                                                            \ 
+        do {                                                            \
                 char ch;                                                \
                 while ((ch = getchar()) != '\n' and ch != EOF )         \
                         continue;                                       \
@@ -39,7 +39,7 @@ void display_menu(klist_t *list) loop({
                 insertion_option(list);
                 clear_buffer;
                 break;
-        
+
         case 2:
                 multi_insertion_option(list);
                 clear_buffer;
@@ -69,9 +69,9 @@ bool insertion_option(klist_t *list)
 
         print("Insert a number");
         defer(scanf("%ld", &number), false);
-        
+
         insert_klist(list, number);
-        
+
         return true;
 }
 
@@ -85,7 +85,7 @@ bool multi_insertion_option(klist_t *list)
                 defer(scanf(" %ld", &number), false);
                 insert_klist(list, number);
         } while (getchar() != '\n');
-        
+
         return true;
 }
 
@@ -96,7 +96,7 @@ uint8_t choice()
         printf(">>> ");
         defer(scanf("%ld", &choice), -1);
 
-        return choice;       
+        return choice;
 }
 
 

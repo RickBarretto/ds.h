@@ -24,7 +24,7 @@ void clear_list(klist_t *list)
 {
         knode_t *curr_node = list->head;
         knode_t *next_node = NULL;
-        
+
         for (; curr_node; curr_node = next_node)
         {
                 next_node = curr_node->next;

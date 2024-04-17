@@ -30,6 +30,7 @@ void print_menu_options();
 uint8_t choice();
 
 // Secondary menus
+bool deletion_option(klist_t *list);
 bool insertion_option(klist_t *list);
 bool multi_insertion_option(klist_t *list);
 
@@ -50,12 +51,17 @@ void display_menu(klist_t *list) loop({
                 multi_insertion_option(list);
                 clear_buffer;
                 break;
-
+        
         case 3:
-                clear_klist(list);
+                deletion_option(list);
+                clear_buffer;
                 break;
 
         case 4:
+                clear_klist(list);
+                break;
+
+        case 5:
                 print("Exiting application");
                 exit(EXIT_SUCCESS);
 
@@ -67,6 +73,19 @@ void display_menu(klist_t *list) loop({
         print("Your actual linked-list's content:");
         traverse_klist(list);
 })
+
+
+bool deletion_option(klist_t *list)
+{
+        size_t number;
+
+        print("Insert a number");
+        defer(scanf("%ld", &number), false);
+
+        delete_element_from_klist(list, number);
+
+        return true;
+}
 
 
 bool insertion_option(klist_t *list)
@@ -111,8 +130,9 @@ void print_menu_options()
         print("Linked List Manager");
         print("\t" "1. Ordered Insertion.");
         print("\t" "2. Multiple Ordered Insertion.");
-        print("\t" "3. Clear list.");
-        print("\t" "4. Exit.");
+        print("\t" "3. Delete element.");
+        print("\t" "4. Clear list.");
+        print("\t" "5. Exit.");
 }
 
 

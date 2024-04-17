@@ -77,7 +77,7 @@ bool insert_klist(klist_t *list, size_t value)
         new_node->val = value;
 
 	// When list is empty
-        if (not list->len)
+        unless (list->len)
         {
                 list->head = new_node;
 		list->len++;

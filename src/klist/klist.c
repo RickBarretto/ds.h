@@ -48,7 +48,7 @@ void delete_element_from_klist(klist_t *list, size_t element)
 {
         unless (list->len) return;
         
-        if (list->len == 1 and list->head == element)
+        if (list->len == 1 and list->head->val == element)
         {
                 free(list->head);
                 list->len = 0;

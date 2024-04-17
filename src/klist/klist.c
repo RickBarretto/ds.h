@@ -28,7 +28,7 @@ klist_t *new_klist()
 }
 
 
-void clear_list(klist_t *list)
+void clear_klist(klist_t *list)
 {
         knode_t *curr_node = list->head;
         knode_t *next_node = NULL;

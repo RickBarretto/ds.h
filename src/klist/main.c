@@ -52,7 +52,7 @@ void display_menu(klist_t *list) loop({
                 break;
 
         case 3:
-                clear_list(list);
+                clear_klist(list);
                 break;
 
         case 4:

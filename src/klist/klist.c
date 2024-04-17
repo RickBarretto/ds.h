@@ -14,6 +14,8 @@
 
 #define new(T, name) T *name = malloc(sizeof(T))
 #define defer(variable, result) if (not (variable)) return (result)
+#define unless(condition) if (not (condition))
+
 #define NODE_SIZE sizeof(knode_t)
 
 
@@ -39,6 +41,32 @@ void clear_list(klist_t *list)
 
         list->head = NULL;
         list->len = 0;
+}
+
+
+void delete_element_from_klist(klist_t *list, size_t element)
+{
+        unless (list->len) return;
+        
+        if (list->len == 1 and list->head == element)
+        {
+                free(list->head);
+                list->len = 0;
+                list->head = NULL;
+                return;
+        }
+
+        knode_t *aux = list->head;
+        while (aux->next and aux->next->val != element)
+                aux = aux->next;
+
+        unless (aux->next)
+                return;
+
+        knode_t *to_delete = aux->next;
+        aux->next = aux->next->next;
+        free(to_delete);
+
 }
 
 

@@ -48,11 +48,12 @@ void delete_element_from_klist(klist_t *list, size_t element)
 {
         unless (list->len) return;
         
-        // FIX: not deleting the first element
+        if (list->head->val == element)
         {
-                free(list->head);
-                list->len = 0;
-                list->head = NULL;
+                knode_t *to_delete = list->head;
+                list->head = list->head->next;
+                free(to_delete);
+                list->len--;
                 return;
         }
 
@@ -66,6 +67,7 @@ void delete_element_from_klist(klist_t *list, size_t element)
         knode_t *to_delete = aux->next;
         aux->next = aux->next->next;
         free(to_delete);
+        list->len--;
 
 }
 

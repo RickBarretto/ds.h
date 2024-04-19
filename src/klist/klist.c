@@ -111,10 +111,13 @@ bool insert_into_klist(klist_t *list, size_t value)
 
 void print_klist(klist_t *list)
 {
+        #define CHAR_DELETE (char)(0x7F)
+        #define delete_last_char() printf("\b%c\b", CHAR_DELETE)
+
         printf("[");
         for (knode_t *cur = list->head; cur; cur = cur->next)
                 printf("%ld, ", cur->val);
-        printf("\b%c\b", 0x7f);
+        delete_last_char();
         printf("]\n");
 }
 

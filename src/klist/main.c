@@ -71,7 +71,7 @@ void display_menu(klist_t *list) loop({
         }
 
         print("Your actual linked-list's content:");
-        traverse_klist(list);
+        print_klist(list);
         print("");
 })
 

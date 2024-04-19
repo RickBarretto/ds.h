@@ -109,7 +109,7 @@ bool insert_into_klist(klist_t *list, size_t value)
 }
 
 
-void traverse_klist(klist_t *list)
+void print_klist(klist_t *list)
 {
         printf("[");
         for (knode_t *cur = list->head; cur; cur = cur->next)

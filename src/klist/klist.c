@@ -44,7 +44,7 @@ void clear_klist(klist_t *list)
 }
 
 
-void delete_element_from_klist(klist_t *list, size_t element)
+void remove_from_klist(klist_t *list, size_t element)
 {
         unless (list->len) return;
         

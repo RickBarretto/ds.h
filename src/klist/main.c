@@ -82,7 +82,7 @@ bool deletion_option(klist_t *list)
         print("Insert a number");
         defer(scanf("%ld", &number), false);
 
-        delete_element_from_klist(list, number);
+        remove_from_klist(list, number);
 
         return true;
 }

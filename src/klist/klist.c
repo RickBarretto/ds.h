@@ -104,6 +104,8 @@ bool insert_klist(klist_t *list, size_t value)
 
         new_node->next = (aux->next) ? next : NULL;
         list->len++;
+        return true;
+
 }
 
 

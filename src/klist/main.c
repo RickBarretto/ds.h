@@ -95,7 +95,7 @@ bool insertion_option(klist_t *list)
         print("Insert a number");
         defer(scanf("%ld", &number), false);
 
-        insert_klist(list, number);
+        insert_into_klist(list, number);
 
         return true;
 }
@@ -108,7 +108,7 @@ bool multi_insertion_option(klist_t *list)
         print("Insert multiple numbers separated by space.");
         do {
                 defer(scanf(" %ld", &number), false);
-                insert_klist(list, number);
+                insert_into_klist(list, number);
         } while (getchar() != '\n');
 
         return true;

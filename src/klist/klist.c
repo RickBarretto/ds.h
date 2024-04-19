@@ -72,7 +72,7 @@ void remove_from_klist(klist_t *list, size_t element)
 }
 
 
-bool insert_klist(klist_t *list, size_t value)
+bool insert_into_klist(klist_t *list, size_t value)
 {
 	new(knode_t, new_node);
         defer(new_node, false);

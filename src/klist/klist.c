@@ -111,8 +111,11 @@ bool insert_into_klist(klist_t *list, size_t value)
 
 void traverse_klist(klist_t *list)
 {
+        printf("[");
         for (knode_t *cur = list->head; cur; cur = cur->next)
-                printf("%ld\n", cur->val);
+                printf("%ld, ", cur->val);
+        printf("\b%c\b", 0x7f);
+        printf("]\n");
 }
 
 

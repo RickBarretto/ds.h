@@ -5,10 +5,8 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
 #include <iso646.h>
-#include <stdbool.h>
 
 #include "klist.h"
 

@@ -8,11 +8,8 @@
 #include <stdint.h>
 #include <iso646.h>
 
+#include "../klist_utils.c"
 #include "klist.h"
-
-#define new(T, name) T *name = malloc(sizeof(T))
-#define defer(variable, result) if (not (variable)) return (result)
-#define unless(condition) if (not (condition))
 
 #define NODE_SIZE sizeof(knode_t)
 
@@ -72,7 +69,7 @@ void remove_from_klist(klist_t *list, size_t element)
 
 bool insert_into_klist(klist_t *list, size_t value)
 {
-	new(knode_t, new_node);
+	    new(knode_t, new_node);
         defer(new_node, false);
         new_node->val = value;
 
@@ -80,7 +77,7 @@ bool insert_into_klist(klist_t *list, size_t value)
         unless (list->len)
         {
                 list->head = new_node;
-		list->len++;
+		        list->len++;
                 list->head->next = NULL;
 
                 return true;
@@ -91,7 +88,7 @@ bool insert_into_klist(klist_t *list, size_t value)
         if (value < list->head->val) {
                 new_node->next = list->head;
                 list->head = new_node;
-		list->len++;
+		        list->len++;
                 return true;
         }
 
